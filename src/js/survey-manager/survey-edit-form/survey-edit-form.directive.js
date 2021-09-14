@@ -49,6 +49,21 @@ function directiveFun(LocalesService, SurveyService, UserStateService, uiDatetim
             }
         ];
 
+        scope.searchSortingAlgorithmOptions = [
+            {
+                id: "paRules",
+                name: "Pairwise associations (machine learning)"
+            },
+            {
+                id: "popularity",
+                name: "Popularity (reporting frequency)"
+            },
+            {
+                id: "fixed",
+                name: "Predetermined order"
+            }
+        ];
+
         scope.uiDatetimePickerConfig = uiDatetimePickerConfig;
         scope.surveyStateOptions = [
             { value: "0", text: "Has not started" },
@@ -158,7 +173,9 @@ function getRequest(scope) {
         maximumTotalSubmissions: scope.form.maximumTotalSubmissions,
         minimumSubmissionInterval: scope.form.minimumSubmissionInterval,
         authUrlDomainOverride: scope.form.authUrlDomainOverride,
-        errorReporting: scope.form.errorReporting
+        errorReporting: scope.form.errorReporting,
+        searchSortingAlgorithm: scope.form.searchSortingAlgorithm,
+        searchMatchScoreWeight: scope.form.searchMatchScoreWeight
     };
 }
 
@@ -200,6 +217,8 @@ function updateScope(scope, data) {
             reportSurveyState: true,
             reportStackTrace: true
         };
+        scope.form.searchSortingAlgorithm = "paRules";
+        scope.form.searchMatchScoreWeight = 0
     } else {
         scope.form.name = data.id;
         scope.form.state = String(data.state);
@@ -220,6 +239,8 @@ function updateScope(scope, data) {
         scope.form.minimumSubmissionInterval = data.minimumSubmissionInterval;
         scope.form.authUrlDomainOverride = data.authUrlDomainOverride;
         scope.form.errorReporting = data.errorReporting;
+        scope.form.searchSortingAlgorithm = data.searchSortingAlgorithm;
+        scope.form.searchMatchScoreWeight = data.searchMatchScoreWeight;
     }
 }
 
@@ -243,4 +264,6 @@ function updateSurvey(scope, data) {
     scope.survey.minimumSubmissionInterval = data.minimumSubmissionInterval;
     scope.form.authUrlDomainOverride = data.authUrlDomainOverride;
     scope.form.errorReporting = data.errorReporting;
+    scope.form.searchSortingAlgorithm = data.searchSortingAlgorithm;
+    scope.form.searchMatchScoreWeight = data.searchMatchScoreWeight;
 }

@@ -105,6 +105,34 @@
         </div>
     </div>
     <div class="form-group">
+        <label class="control-label col-sm-2">Search results sorting algorithm</label>
+        <div class="col-sm-10 col-lg-4">
+            <select
+                class="form-control"
+                ng-model="form.searchSortingAlgorithm"
+                ng-disabled="!currentUser.canCreateSurveys()"
+                ng-attr-title="{{
+                    currentUser.canCreateSurveys()
+                        ? ''
+                        : 'Please contact the system administrator to change your survey\'s scheme'
+                }}">
+                <option ng-repeat="item in searchSortingAlgorithmOptions" value="{{ item.id }}">{{ item.name }} </option>
+            </select>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-sm-2">Search results match score weight</label>
+        <div class="col-sm-10">
+            <input
+                type="range"
+                class="form-control"
+                min="0"
+                max="100"
+                ng-model="form.searchMatchScoreWeight"
+            />
+        </div>
+    </div>
+    <div class="form-group">
         <label class="control-label col-sm-2">Follow-up survey URL</label>
         <div class="col-sm-10">
             <input
