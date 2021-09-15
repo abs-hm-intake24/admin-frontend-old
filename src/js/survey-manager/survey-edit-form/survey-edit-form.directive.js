@@ -56,7 +56,11 @@ function directiveFun(LocalesService, SurveyService, UserStateService, uiDatetim
             },
             {
                 id: "popularity",
-                name: "Popularity (reporting frequency)"
+                name: "Popularity (reporting frequency) in study locale"
+            },
+            {
+                id: "globalPop",
+                name: "Global popularity (reporting frequency)"
             },
             {
                 id: "fixed",
