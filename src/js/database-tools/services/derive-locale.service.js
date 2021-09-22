@@ -20,6 +20,18 @@ function serviceFun($http, $window) {
                 transformRequest: angular.identity,
                 headers: {"Content-Type": undefined}
             });
+        },
+
+        cloneLocalFoods: function (sourceLocale, targetLocale) {
+            var fd = new FormData();
+
+            fd.append("sourceLocale", sourceLocale);
+            fd.append("targetLocale", targetLocale);
+
+            return $http.post($window.api_base_url + "v2/foods/admin/clone-local", fd, {
+                transformRequest: angular.identity,
+                headers: {"Content-Type": undefined}
+            });
         }
     };
 }

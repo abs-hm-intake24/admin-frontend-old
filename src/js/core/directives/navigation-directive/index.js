@@ -39,6 +39,10 @@ function directiveFun($location, $routeParams, LocalesService, appRoutes, UserSt
                     href: appRoutes.databaseTools.mergeLocales,
                     active: false
                 },
+                cloneLocal: {
+                    href: appRoutes.databaseTools.cloneLocal,
+                    active: false
+                },
                 updateUKSA: {
                     href: appRoutes.databaseTools.updateUKSA,
                     active: false

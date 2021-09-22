@@ -25,6 +25,9 @@
                     a(ng-href="/\#{{menuItems.databaseTools.deriveLocale.href}}" ng-class="{'active': menuItems.databaseTools.deriveLocale.active}")
                         | #{ gettext("Derive new locale") }
                 li
+                    a(ng-href="/\#{{menuItems.databaseTools.cloneLocal.href}}" ng-class="{'active': menuItems.databaseTools.cloneLocal.active}")
+                        | #{ gettext("Clone local food data") }
+                li
                     a(ng-href="/\#{{menuItems.databaseTools.mergeLocales.href}}" ng-class="{'active': menuItems.databaseTools.mergeLocales.active}")
                         | #{ gettext("Merge locales") }
                 li

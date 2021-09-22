@@ -1,11 +1,10 @@
 <div class="intake24-database-tool">
-  <h3>Derive local food database</h3>
-
+  <h3>Clone local food data</h3>
 
   <div class="col-sm-12 col-lg-8">
     <div class="bg-info p-1">
-      <p>This tool can be used to initialise a new food database locale from an existing locale and a
-        CSV file describing the list of changes.</p>
+      <p>This tool can be used to initialise a new food database locale from an existing locale by
+        copying local food data</p>
 
       <p>Creating new locales is currently not possible using this tool because it requires changing
         the backend code to set up the indexing and spelling correction rules.</p>
@@ -28,26 +27,18 @@
         </select>
       </div>
 
-      <div class="form-group">
-        <label class="control-label">Input CSV format</label>
-        <select ng-model="format" class="form-control">
-          <option ng-value="fmt.id" ng-repeat="fmt in availableFormats | orderBy: 'description'">{{fmt.description}}</option>
-        </select>
-      </div>
-
       <div class="form-group bg-warning p-1" ng-if="errors.length > 0">
         <h4 class="mb-1">The following problems were encountered during the upload:</h4>
         <p class="mb-1" ng-repeat="errorMessage in errors track by $index">{{ errorMessage }}</p>
       </div>
 
       <div class="form-group">
-        <button class="btn btn-default" ng-disabled="!(sourceLocale && targetLocale && format)" file-button
-                on-change="uploadSpreadsheet(fileList)"><span class="fa fa-upload"></span>&nbsp;Upload spreadsheet
+        <button class="btn btn-default" ng-disabled="!(sourceLocale && targetLocale)" ng-click="cloneLocal()">
+          Clone local food data
         </button>
       </div>
     </form>
   </div>
-
-
+  
 </div>
 

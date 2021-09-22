@@ -5,6 +5,7 @@ module.exports = function (app) {
     require("./food-composition")(app);
     require("./food-frequency.controller")(app);
     require("./derive-locale/derive-locale.controller")(app);
+    require("./clone-local/clone-local.controller")(app);
     require("./merge-locales/merge-locales.controller")(app);
     require("./update-uksa/update-uksa.controller")(app);
     require("./recalculate-nutrients/recalculate-nutrients.controller")(app);
