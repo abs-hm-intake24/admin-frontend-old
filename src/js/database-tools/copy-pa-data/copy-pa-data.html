@@ -1,0 +1,35 @@
+<div class="intake24-database-tool">
+  <h3>Copy pairwise associations data</h3>
+
+  <div class="col-sm-12 col-lg-8">
+    <div class="bg-info p-1">
+      <p>This tool will copy pairwise associations data from <strong>source locale</strong> to <strong>destination locale</strong>.</p>
+
+      <p><strong>Warning: existing associations data in the destination locale will be overwritten!</strong></p>
+
+      <p>Creating new locales is currently not possible using this tool because it requires changing
+        the backend code to set up the indexing and spelling correction rules.</p>
+
+    </div>
+
+    <form class="mt-1">
+      <div class="form-group">
+        <label class="control-label">Source locale</label>
+        <select ng-model="sourceLocale" class="form-control">
+          <option ng-value="locale.id" ng-repeat="locale in locales | orderBy: 'englishName'">{{locale.englishName}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label">Destination locale</label>
+        <select ng-model="targetLocale" class="form-control">
+          <option ng-value="locale.id" ng-repeat="locale in locales | orderBy: 'englishName' ">{{locale.englishName}}</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-default" ng-disabled="!(sourceLocale && targetLocale)" ng-click="copyOccurrenceData()">Copy data</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -10,5 +10,6 @@ module.exports = function (app) {
     require("./update-uksa/update-uksa.controller")(app);
     require("./recalculate-nutrients/recalculate-nutrients.controller")(app);
     require("./export-nutrient-mapping/export-nutrient-mapping.controller")(app);
+    require("./copy-pa-data/copy-pa-data.controller")(app);
     require("./directives/task-status/task-status.directive")(app);
 };

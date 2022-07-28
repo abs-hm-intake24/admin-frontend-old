@@ -36,6 +36,10 @@ function directiveFun(LocalesService, SurveyService, UserStateService, uiDatetim
                 name: "NDNS (October 2019)"
             },
             {
+                id: "ndns1019_behaviour",
+                name: "NDNS (October 2019) Behaviour"
+            },
+            {
                 id: "ndns_follow_up",
                 name: "NDNS FollowUp"
             },
@@ -89,6 +93,12 @@ function directiveFun(LocalesService, SurveyService, UserStateService, uiDatetim
         };
 
         scope.locales = [];
+
+        scope.showJWT = false;
+
+        scope.toggleShowJWT = function() {
+            scope.showJWT = !scope.showJWT;
+        };
 
         scope.openStartDatePicker = function() {
             scope.datePickerState.startIsOpen = true;

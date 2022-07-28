@@ -154,18 +154,40 @@
             />
         </div>
     </div>
-    <div class="form-group" ng-if="currentUser.canCreateSurveys()">
+    <div class="form-group">
         <div class="col-sm-10 col-sm-offset-2">
             <label class="checkbox-inline">
-                <input type="checkbox" ng-model="form.allowGeneratedUsers" />
+                <input
+                    type="checkbox"
+                    ng-model="form.allowGeneratedUsers"
+                    ng-disabled="!currentUser.canCreateSurveys()"
+                />
                 Allow automatic user generation
             </label>
         </div>
     </div>
-    <div class="form-group" ng-if="currentUser.canCreateSurveys()">
+    <div class="form-group">
         <label class="control-label col-sm-2">JWT secret for user generation</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" ng-disabled="!form.allowGeneratedUsers" ng-model="form.generateUserKey" />
+            <div class="input-group">
+                <input
+                    autocomplete="new-password"
+                    type="{{ showJWT ? 'text' : 'password' }}"
+                    class="form-control"
+                    ng-model="form.generateUserKey"
+                    ng-disabled="!form.allowGeneratedUsers || !currentUser.canCreateSurveys()"
+                    ng-attr-title="{{
+                        currentUser.canCreateSurveys()
+                            ? ''
+                            : 'Please contact the system administrator to change your JWT secret'
+                    }}"
+                />
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" ng-click="toggleShowJWT()">
+                        <span class="{{ showJWT ? 'fa fa-eye-slash' :'fa fa-eye' }}"></span>
+                    </button>
+                </span>
+            </div>
         </div>
     </div>
     <div class="form-group" ng-if="currentUser.canCreateSurveys()">

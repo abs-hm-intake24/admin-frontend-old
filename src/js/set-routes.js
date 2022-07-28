@@ -31,7 +31,8 @@ module.exports = function (app) {
             exportMapping: '/database-tools/export-mapping',
             compositionTables: '/database-tools/composition-tables',
             compositionTablesNew: '/database-tools/composition-tables/new',
-            compositionTablesEdit: '/database-tools/composition-tables/edit/:tableId'
+            compositionTablesEdit: '/database-tools/composition-tables/edit/:tableId',
+            copyPAData: '/database-tools/copy-pa-data'
         },
         surveyFeedback: '/survey-feedback'
     };
@@ -156,6 +157,10 @@ module.exports = function (app) {
             .when(routes.databaseTools.compositionTablesNew, {
                 template: require("./database-tools/food-composition/fct-edit.html"),
                 controller: 'FoodCompositionEditController'
+            })
+            .when(routes.databaseTools.copyPAData, {
+                template: require("./database-tools/copy-pa-data/copy-pa-data.html"),
+                controller: 'CopyPADataController'
             })
             .otherwise({
                 redirectTo: routes.welcome

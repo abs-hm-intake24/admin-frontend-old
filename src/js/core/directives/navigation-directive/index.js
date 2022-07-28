@@ -55,6 +55,10 @@ function directiveFun($location, $routeParams, LocalesService, appRoutes, UserSt
                     href: appRoutes.databaseTools.exportMapping,
                     active: false
                 },
+                copyPAData: {
+                    href: appRoutes.databaseTools.copyPAData,
+                    active: false
+                },
                 collapsed: true,
                 active: false
             },

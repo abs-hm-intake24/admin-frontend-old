@@ -15,14 +15,14 @@ function serviceFun($timeout) {
             if (active) {
                 $timeout(function () {
                     self.showMessage(text, type);
-                }, 4000);
+                }, 20000);
             } else {
                 messageText = text;
                 messageType = type;
                 active = true;
                 $timeout(function () {
                     self.hideMessage();
-                }, 4000);
+                }, 20000);
             }
         },
         showSuccess: function (text) {

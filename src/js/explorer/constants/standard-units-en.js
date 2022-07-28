@@ -130,6 +130,11 @@ module.exports = function () {
         },
 
         {
+            id: 'burgers',
+            name: 'burgers'
+        },
+
+        {
             id: 'burritos',
             name: 'burritos'
         },
@@ -190,6 +195,11 @@ module.exports = function () {
         },
 
         {
+            id: 'cocktail_sausages',
+            name: 'cocktail sausages'
+        },
+
+        {
             id: 'crackers',
             name: 'crackers'
         },
@@ -197,6 +207,11 @@ module.exports = function () {
         {
             id: 'crepes',
             name: 'crepes'
+        },
+
+        {
+            id: 'crumpets',
+            name: 'crumpets'
         },
 
         {
@@ -255,6 +270,11 @@ module.exports = function () {
         },
 
         {
+            id: 'extra_large_biscuits',
+            name: 'extra large biscuits'
+        },
+
+        {
             id: 'extra_large_eggs',
             name: 'extra large eggs'
         },
@@ -302,6 +322,11 @@ module.exports = function () {
         {
             id: 'fruits',
             name: 'fruits'
+        },
+
+        {
+            id: 'giant_crumpets',
+            name: 'giant crumpets'
         },
 
         {
@@ -492,6 +517,11 @@ module.exports = function () {
         {
             id: 'large_jars',
             name: 'large jars'
+        },
+
+        {
+            id: 'large_kebabs',
+            name: 'large kebabs'
         },
 
         {
@@ -1075,6 +1105,11 @@ module.exports = function () {
         },
 
         {
+            id: 'pikelets',
+            name: 'pikelets'
+        },
+
+        {
             id: 'pilchards',
             name: 'pilchards'
         },
@@ -1157,6 +1192,11 @@ module.exports = function () {
         {
             id: 'regular_churros',
             name: 'regular churros'
+        },
+
+        {
+            id: 'regular_standard_kebabs',
+            name: 'regular / standard kebabs'
         },
 
         {
@@ -1320,13 +1360,18 @@ module.exports = function () {
         },
 
         {
-            id: 'small_bowls',
-            name: 'small bowls'
+            id: 'small_burgers',
+            name: 'small burgers'
         },
 
         {
             id: 'small_cakes',
             name: 'small cakes'
+        },
+
+        {
+            id: 'small_carrots',
+            name: 'small carrots'
         },
 
         {
@@ -1432,6 +1477,11 @@ module.exports = function () {
         {
             id: 'small_pancakes',
             name: 'small pancakes'
+        },
+
+        {
+            id: 'small_pastries',
+            name: 'small pastries'
         },
 
         {
